@@ -8,8 +8,8 @@
       class="about-me-about-me"
       v-for="item in aboutMeList" :key="item"
     >
-      <i class="about-me-about-me-icon"></i>
-      <div class="about-me-about-me-item"></div>
+      <i :class="'about-me-about-me-icon icon-' + item.icon"></i>
+      <div class="about-me-about-me-item"> {{item.text}} </div>
     </div>
     <div class="about-me-line"></div>
   </div>
@@ -29,12 +29,16 @@ export default {
       info: 'Доброго времени суток! Меня зовут Виталий. Я занимаюсь профессиональной разработкой сайтов под ключ. О себе:',
       aboutMeList: [
         {
-          icon: '',
+          icon: 'checkmark',
+          text: 'Программист с высшим образованием'
+        },
+        {
+          icon: 'checkmark',
           text: 'Действующий web-разработчик в аккредитованой IT-компании'
         },
         {
-          icon: '',
-          text: 'Большой опыт создания и ведения сайтов для бизнеса'
+          icon: 'checkmark',
+          text: 'Имею большой опыт создания и ведения сайтов для бизнеса'
         }
       ]
     }
@@ -68,6 +72,22 @@ export default {
     text-align: justify;
     font-size: 16px;
     opacity: 0.9;
+  }
+
+  &-about-me {
+    display: flex;
+    opacity: 0.9;
+    margin-top: 10px;
+    font-size: 15px;
+    vertical-align: middle;
+
+    &-icon {
+      margin-left: 10px;
+    }
+
+    &-item {
+      margin-left: 5px;
+    }
   }
 }
 </style>
